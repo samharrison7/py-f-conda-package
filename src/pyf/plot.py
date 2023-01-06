@@ -1,6 +1,5 @@
 import platform
 import ctypes as ct
-from ctypes.util import find_library
 import matplotlib.pyplot as plt
 import numpy as np
 
