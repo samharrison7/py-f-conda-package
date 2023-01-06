@@ -1,3 +1,18 @@
 [build-system]
-requires = ["setuptools>=42"]
+requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyf"
+version = "1.0.0"
+description = "A demo package showing how to build a Conda package with Fortran and Python code"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT License"}
+dependencies = [
+    "numpy",
+    "matplotlib"
+]
+
+[project.scripts]
+pyf = "pyf.cli:run"

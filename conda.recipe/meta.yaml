@@ -1,0 +1,30 @@
+{% set version = "0.1.0" %}
+
+package:
+  name: pyf
+  version: {{ version }}
+
+source:
+  path: ..
+
+build:
+  entry_points:
+    - pyf = pyf.cli:run
+
+requirements:
+  build:
+    - {{ compiler('fortran') }}   # [not win]
+    - m2w64-gcc-fortran           # [win]
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - numpy
+    - matplotlib
+
+test:
+  imports:
+    - pyf
+  commands:
+    - pyf --help
