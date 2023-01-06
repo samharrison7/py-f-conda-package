@@ -9,7 +9,7 @@ def plot_quadratic(a, b, c, x_min, x_max, N):
     # Get the extension for the library, depending on which OS we're on
     lib_ext = 'dll' if platform.system()=='Windows' else 'so'
 	# Load the library and get the calc_quadratic function
-    calc_quadratic = ct.CDLL(f'quadratic.{lib_ext}').calc_quadratic
+    calc_quadratic = ct.CDLL(f'quadratic.{lib_ext}', winmode=1).calc_quadratic
     # Create an empty array to store the result in
     y = np.empty(N, dtype='double')
     # Call the Fortran function
